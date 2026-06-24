@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: researchmind-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: researchmind-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=sqlite:////app/storage/researchmind.db
+      - REDIS_URL=redis://redis:6379/0
+      - CHROMA_PATH=/app/storage/chroma_db
+      - JWT_SECRET=researchmind-secret-key-super-secure-12345
+      - HF_TOKEN=
+      - CORS_ORIGINS=["http://localhost:3000", "http://127.0.0.1:3000"]
+    volumes:
+      - backend_storage:/app/storage
+      - backend_reports:/app/generated_reports
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: researchmind-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  redis_data:
+    driver: local
+  backend_storage:
+    driver: local
+  backend_reports:
+    driver: local

@@ -1,0 +1,46 @@
+# Python Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache & Testing
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Node.js & Frontend Build Outputs
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo
+.eslintcache
+
+# Databases & Vector Stores
+*.db
+chroma_db/
+backend/chroma_db/
+backend/researchmind.db
+researchmind.db
+
+# Storage, Uploads, and Generated Reports
+storage/
+backend/storage/
+generated_reports/
+backend/generated_reports/
+app/uploads/*
+!app/uploads/.gitkeep
+backend/app/uploads/*
+!backend/app/uploads/.gitkeep
+
+# IDEs & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,1 @@
+# Trend Prediction AI package

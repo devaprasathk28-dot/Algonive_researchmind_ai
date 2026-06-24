@@ -1,0 +1,17 @@
+RELATION_TYPES = [
+    "USES",
+    "TRAINS_ON",
+    "COMPARES_WITH",
+    "IMPROVES",
+    "OUTPERFORMS",
+    "PREDICTS",
+    "CLASSIFIES",
+    "DETECTS",
+    "GENERATES",
+    "EVALUATED_ON",
+    "IMPLEMENTED_IN",
+    "CITES",
+    "PROPOSES",
+    "BASED_ON",
+    "EXTENDS"
+]
