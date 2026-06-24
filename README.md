@@ -116,61 +116,80 @@ For deep technical implementation details, explore the sub-guides:
 ## 🚀 Key Features
 
 ### 📄 Smart Research Paper Processing
-*   **PDF Upload & Management**: Secure upload gateways supporting multi-file and bulk staging.
-*   **Advanced PDF Parsing**: Extracts metadata, authors, DOI, and splits documents into sections using `pdfplumber` and `PyMuPDF`.
-*   **OCR-Based Extraction & Vision**: Uses `easyocr` and OpenCV pipeline filters to extract visual figures, diagrams, and tabular data.
+*   **PDF Upload & Management**: Secure multi-paper file upload gateway.
+*   **Advanced PDF Parsing**: Extracts metadata, authors, DOI, abstract, and identifies outline sections using `pdfplumber` and `PyMuPDF`.
+*   **OCR-Based Text Extraction**: Advanced image OCR to parse text and formulas.
+*   **Figure & Table Extraction**: Isolates tables and figures for vision-based caption analysis.
+*   **Metadata Detection**: Finds publisher DOIs, journals, publication years, and author affiliations automatically.
+*   **Automatic Section Identification**: Intelligently indexes chapters (Introduction, Methodology, Experiments, etc.).
 
 ### 🧠 AI Research Understanding Engine
-Autonomously generates:
-*   **TL;DR summaries** & Executive summaries.
-*   **Section-wise outline analysis** and Key Contributions.
-*   **Research Objectives**, Methodology Overviews, Results Interpretation, and Conclusion summaries.
+*   **TL;DR Summary**: Ultra-condensed sentence summarizing the paper's core achievement.
+*   **Executive Summary**: Executive-level overview of objectives, innovations, and outcomes.
+*   **Section-wise Summary**: Deep section summaries mapping progress.
+*   **Key Contributions**: Bulleted lists highlight primary breakthroughs.
+*   **Research Objectives**: Outlines research questions and scopes.
+*   **Methodology Overview**: Explains algorithms, frameworks, and pipelines.
+*   **Results Interpretation**: Interprets evaluation values, datasets accuracy, and comparisons.
+*   **Conclusion Analysis**: Analyzes logical deductions and implications.
 
 ### ⭐ Research Critic Engine
-Critically evaluates papers:
-*   **Strengths & Weaknesses**: Analysis of structural quality and baseline comparisons.
-*   **Methodology & Design**: Identifies limitations, dataset adequacy, experimental flaws, and potential biases.
+*   **Strengths & Weaknesses**: Audits papers on logical gaps, clarity, and contribution size.
+*   **Limitations & Biases**: Flags engineering bounds, bias parameters, and computational limitations.
+*   **Methodology Quality**: Audits math correctness and validation configurations.
+*   **Dataset Adequacy**: Flags low dataset samples, lack of cross-validation, and over-fitting indicators.
+*   **Experimental Design**: Assesses validity of control environments and assumptions.
+*   **Reproducibility Guide**: Step-by-step checklist to rebuild training setups.
 
 ### 📊 Evidence-Based Research Scoring
-Computes quantitative indicators with citation evidence:
-*   Novelty, Innovation, Technical Quality, Clarity, Dataset Quality, and Reproducibility.
-*   Aggregates metrics to produce a unified **Research Health Score**.
+*   **Novelty Score**: Grades original ideas compared to baseline publications.
+*   **Innovation Score**: Assesses potential shift in state-of-the-art metrics.
+*   **Technical Quality**: Rates mathematical rigor and proof foundations.
+*   **Clarity Score**: Grades readability, structuring, and notation cleanout.
+*   **Dataset Quality**: Scores transparency, noise ratios, and standard usage of benchmarks.
+*   **Reproducibility Score**: Grades availability of parameters, links, and codebases.
+*   **Research Health Score**: Consolidated scoring matrix combining all dimensions.
 
 ### 🏷️ AI Research Classification
-Categorizes scientific papers automatically:
-*   **Core Fields**: AI, ML, Deep Learning, Computer Vision, NLP, Data Science, Healthcare AI, Cybersecurity, FinTech, and Robotics.
-*   **Attributes**: Research Type, Application Domain, Complexity level, and Industry Relevance.
+*   **Domain Classification**: Categorizes papers into AI, Machine Learning, Deep Learning, Computer Vision, NLP, Data Science, Healthcare AI, Cybersecurity, FinTech, and Robotics.
+*   **Additional Dimensions**: Classifies by Research Type (empirical, theoretical, etc.), Application Domain, Complexity level, and Industry Relevance.
 
 ### 📈 Research Metrics & Document Intelligence
-Calculates document statistics:
-*   Page and word count, reading estimation, references count.
-*   Figure, table, and equation counts.
-*   Computes **Technical Density**, **Methodology Depth**, and **Document Intelligence Score**.
+*   **Standard Counters**: Page count, word count, reading time estimation, and reference count.
+*   **Visual Counters**: Figure count, table count, and mathematical equation count.
+*   **Calculated Indices**: Technical Density index, Methodology Depth, and overall Document Intelligence Score.
 
 ### 🔍 Semantic Search & RAG Chat
-*   Ask questions directly from uploaded papers using context-aware Retrieval-Augmented Generation (RAG).
-*   Allows multi-paper queries with accurate citation mappings.
+*   **Context-Aware Q&A**: Chat interface resolving queries using specific text passages.
+*   **Retrieval-Augmented Generation (RAG)**: Connects FastAPI to local vector caches to prevent hallucinations.
+*   **Semantic Search**: Conceptual search matching queries without keyword overrides.
+*   **Multi-Paper Search**: Queries across all uploaded literature simultaneously.
+*   **Citation-Based Answers**: Answers reference specific page numbers, headings, and authors.
 
 ### 🕸️ Semantic Knowledge Graph
-Autonomously maps concepts to build visual networks:
-*   **Entities**: Models, Datasets, Methods, Tasks, Frameworks, Metrics, Organizations, and Authors.
-*   **Relationships**: `TRAINS_ON`, `USES`, `IMPROVES`, `COMPARES_WITH`, `OUTPERFORMS`, `IMPLEMENTED_IN`, `EVALUATED_ON`, and `CITES`.
+*   **Entity Extraction**: Identifies Models, Datasets, Methods, Tasks, Frameworks, Metrics, Organizations, and Authors.
+*   **Relationship Mapping**: Maps directional nodes using `TRAINS_ON`, `USES`, `IMPROVES`, `COMPARES_WITH`, `OUTPERFORMS`, `IMPLEMENTED_IN`, `EVALUATED_ON`, and `CITES`.
 
 ### 📚 Multi-Paper Research Intelligence
-*   Performs side-by-side analysis, benchmarking, and consensus/contradiction detection across papers to locate research gaps.
+*   **Cross-Paper Analysis**: Compares multiple papers side-by-side on methodology, results, and architecture.
+*   **Consensus & Contradiction**: Flags areas where literature agrees or contradicts on benchmarks.
+*   **Gap Discovery**: Highlights unaddressed areas or empty intersections in citation paths.
 
 ### 📝 Automated Literature Review Generator
-*   Constructs publication-style literature reviews complete with Introduction, Related Work, Comparative Analysis, Research Trends, Gaps, and Future Directions.
+*   Generates publication-quality literature reviews covering Introduction, Related Work, Comparative Analysis, Research Trends, Gaps, Future Directions, and Conclusion.
 
 ### 🎯 Hybrid Research Recommendation Engine
-Filters research updates based on hybrid profiles:
-*   Combines **Semantic similarity**, **Entity similarity**, **Knowledge graph connections**, and user research history to suggest papers, datasets, models, and topics.
+*   **Hybrid Matching**: Recommends updates using Semantic similarity, Entity overlap, Graph centrality, and user interest logs.
+*   **Target Suggestions**: Suggests related papers, public datasets, baseline models, and emerging topics.
+
+### 🧠 Research Memory & Knowledge Base
+*   **Persistent Memory**: Creates long-term profiles storing paper summaries, criticisms, knowledge graphs, custom literature reviews, and search histories.
 
 ### 🤖 AI Research Copilot
-*   Interactive dashboard companion capable of explaining formulas, suggesting architectures, and supporting literature review formulation.
+*   **Interactive Partner**: Assists in explaining formulas, answering research questions, locating gaps, recommending models/datasets, and structuring essays.
 
 ### 📤 Export Center
-*   Download generated summaries, critiques, scores, and knowledge graphs into professional **PDF**, **DOCX**, and **PPT** presentations.
+*   Generates and packages summaries, scores, critiques, and reviews into professional **PDF**, **Word (DOCX)**, and **PowerPoint (PPT)** layouts.
 
 ---
 
