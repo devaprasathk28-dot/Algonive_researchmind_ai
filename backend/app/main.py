@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from typing import cast, Callable
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi.errors import RateLimitExceeded
@@ -72,7 +73,7 @@ app = FastAPI(
 
 # SlowAPI configuration
 app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_exception_handler(RateLimitExceeded, cast(Callable, _rate_limit_exceeded_handler))
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
