@@ -1,12 +1,22 @@
 # 🔬 ResearchMind AI — Autonomous Scientific Discovery & Intellect Engine
 
-ResearchMind AI is an advanced, AGI-powered research assistant and autonomous scientific laboratory. It bridges the gap between raw academic literature and proactive knowledge synthesis by combining multimodal PDF parsing, semantic indexing (RAG), voice-guided interactive chat, multi-agent critique orchestration, live research alerts, and a fully automated autonomous research loop (spanning hypothesis generation, Neural Architecture Search, training automation, deployment, self-learning, and meta-reasoning).
+[![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11-blue.svg)](https://www.python.org/)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-green.svg)](https://nodejs.org/)
+[![Framework](https://img.shields.io/badge/Next.js-15.2-black.svg)](https://nextjs.org/)
+[![API](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/license-MIT-purple.svg)](LICENSE)
+
+ResearchMind AI is a next-generation AI-powered research intelligence platform designed to help students, researchers, academicians, and innovators analyze, understand, compare, and discover scientific knowledge faster.
+
+The platform combines advanced PDF understanding, multimodal document analysis, semantic search, retrieval-augmented generation (RAG), research criticism, knowledge graphs, literature intelligence, recommendation systems, and AI-powered research assistance into a single unified ecosystem.
+
+ResearchMind AI transforms research papers into structured knowledge, enabling users to generate summaries, evaluate research quality, identify gaps, compare multiple papers, discover emerging trends, and build a personalized research knowledge base.
 
 ---
 
 ## 🗺️ System Architecture
 
-The diagram below details the interaction between the Next.js frontend, the FastAPI gateway, the RAG memory subsystem, the specialized multi-agent cognitive layers, and the autonomous scientific discovery pipelines.
+The diagram below details the interaction between the Next.js frontend dashboard, the FastAPI gateway, the RAG memory subsystem, the specialized multi-agent cognitive layers, and the autonomous scientific discovery pipelines.
 
 ```mermaid
 graph TD
@@ -84,187 +94,238 @@ graph TD
     UI -->|Visualize Performance| Charts
 ```
 
----
-
-## ✨ Core Features & Implemented Systems
-
-### 1. Smart PDF Processing & Multimodal OCR
-*   **Deep Text Parsing:** Extracts title, authors, abstract, keywords, DOI, and sections (Introduction, Methodology, Results, Conclusion, etc.) using `pdfplumber` and `PyMuPDF`.
-*   **Visual & OCR Extraction:** PyMuPDF extracts figures and tables, passing them to `easyocr` and custom interpreters to analyze table contents, chart labels, and diagram flows.
-
-### 2. Deep Research Criticism & Scoring
-*   **Multi-Dimension Scoring:** Computes objective ratings for **Novelty**, **Clarity**, **Technical Quality**, **Reproducibility**, **Dataset Quality**, and **Innovation**.
-*   **Critic Evaluations:** Generates comprehensive lists of strengths, weaknesses, and step-by-step reproducibility checklists.
-
-### 3. Document RAG & Interactive Q&A
-*   **Local Vector Storage:** Indexes parsed document chunks using `sentence-transformers` and stores them in `chromadb`.
-*   **Smart Chat:** Context-aware Q&A system that fetches relevant paper sections to answer detailed technical inquiries.
-
-### 4. Interactive Knowledge Graph Visualizer
-*   **Entity & Relation Extraction:** Analyzes texts to isolate key scientific concepts, datasets, methodologies, and findings.
-*   **Visual Topologies:** Renders real-time interactive nodes and links directly in the frontend using D3/graph-mode styles.
-
-### 5. Multi-Paper Comparative Analysis
-*   **Side-by-Side Review:** Compares two papers on methodology, dataset utilization, mathematical framework, and scientific contributions.
-
-### 6. Voice-Guided Assistant (Text-to-Speech / Speech-to-Text)
-*   **Narrations & Listening:** Aloud summaries and voice-based querying.
-*   **Dual Speech Driver Support:** Integrates browser-native Web Speech API and backend `pyttsx3`/`SpeechRecognition` drivers.
-
-### 8. Real-Time Tracking & Alerting
-*   **arXiv Tracker:** Regularly monitors arXiv directories for newly published papers on designated topics.
-*   **Spike & Breakthrough Detection:** Flags sudden scientific interest spikes or potential breakthroughs.
-*   **Live Feeds:** Personalized academic recommendation feed utilizing semantic similarity interest-profiling.
-
-### 9. Autonomous Scientific Discovery Lab
-*   **Hypothesis Engine:** Uncovers research gaps, generates cross-domain research proposals, and runs validation algorithms.
-*   **Experiment Design Engine:** Automatically plans experiments, selects baseline models/datasets, and generates execution blueprints.
-*   **Neural Architecture Search (NAS):** Designs candidates within specified search spaces, runs model evaluators, and exports optimal neural network architectures.
-*   **Training Automation:** Generates training pipelines, handles datasets, builds models, schedules checkpointers, and evaluates runs.
-*   **Deployment Engine:** Auto-packages models, runs an API Gateway, handles version control, auto-scales, and monitors inference.
-*   **Self-Learning Loop:** Gathers feedback, logs adaptation steps, and updates the local agent memory for future designs.
-*   **Meta-Reasoning & Cognitive Refinement:** Detects biases, reflects on historical pipeline errors, and executes self-corrections.
-*   **AGI Research Director:** Orchestrates global planning and cognitive routing across all engines under a governor dashboard.
-*   **Scientific World Model:** Models future simulations, forecasts trends, and provides predictive reasoning reports.
+### Modular Interaction Flow:
+```
+Frontend Layer ──► Next.js Dashboard ──► FastAPI Backend ──► AI Intelligence Layer ──► RAG & Vector DB ──► Research Knowledge Base ──► Recommendation & Discovery Engine
+```
 
 ---
 
-## 🛠️ Tech Stack
+## 📚 Technical Manuals & Guides
+
+For deep technical implementation details, explore the sub-guides:
+
+*   **[🏁 Getting Started Setup](file:///c:/Users/devap/Documents/researchmind-ai/docs/getting_started.md)**: Steps to install, configure, and boot the frontend and backend locally.
+*   **[🗺️ System Architecture Guide](file:///c:/Users/devap/Documents/researchmind-ai/docs/architecture.md)**: Deep dive into the agent bus communication, database schemas, and global data flows.
+*   **[🤖 Autonomous Scientific Discovery Loop](file:///c:/Users/devap/Documents/researchmind-ai/docs/autonomous_agents.md)**: Breakdown of the 9 cognitive sub-engines coordinating model training, architecture search, and self-adaptation.
+*   **[📡 API Directory Reference](file:///c:/Users/devap/Documents/researchmind-ai/docs/api_endpoints.md)**: Reference listing payload structures and routing for all endpoints.
+*   **[🐳 Docker Containerization Setup](file:///c:/Users/devap/Documents/researchmind-ai/docker/README.md)**: Quick-start commands for booting the platform using Docker Compose.
+
+---
+
+## 🚀 Key Features
+
+### 📄 Smart Research Paper Processing
+*   **PDF Upload & Management**: Secure upload gateways supporting multi-file and bulk staging.
+*   **Advanced PDF Parsing**: Extracts metadata, authors, DOI, and splits documents into sections using `pdfplumber` and `PyMuPDF`.
+*   **OCR-Based Extraction & Vision**: Uses `easyocr` and OpenCV pipeline filters to extract visual figures, diagrams, and tabular data.
+
+### 🧠 AI Research Understanding Engine
+Autonomously generates:
+*   **TL;DR summaries** & Executive summaries.
+*   **Section-wise outline analysis** and Key Contributions.
+*   **Research Objectives**, Methodology Overviews, Results Interpretation, and Conclusion summaries.
+
+### ⭐ Research Critic Engine
+Critically evaluates papers:
+*   **Strengths & Weaknesses**: Analysis of structural quality and baseline comparisons.
+*   **Methodology & Design**: Identifies limitations, dataset adequacy, experimental flaws, and potential biases.
+
+### 📊 Evidence-Based Research Scoring
+Computes quantitative indicators with citation evidence:
+*   Novelty, Innovation, Technical Quality, Clarity, Dataset Quality, and Reproducibility.
+*   Aggregates metrics to produce a unified **Research Health Score**.
+
+### 🏷️ AI Research Classification
+Categorizes scientific papers automatically:
+*   **Core Fields**: AI, ML, Deep Learning, Computer Vision, NLP, Data Science, Healthcare AI, Cybersecurity, FinTech, and Robotics.
+*   **Attributes**: Research Type, Application Domain, Complexity level, and Industry Relevance.
+
+### 📈 Research Metrics & Document Intelligence
+Calculates document statistics:
+*   Page and word count, reading estimation, references count.
+*   Figure, table, and equation counts.
+*   Computes **Technical Density**, **Methodology Depth**, and **Document Intelligence Score**.
+
+### 🔍 Semantic Search & RAG Chat
+*   Ask questions directly from uploaded papers using context-aware Retrieval-Augmented Generation (RAG).
+*   Allows multi-paper queries with accurate citation mappings.
+
+### 🕸️ Semantic Knowledge Graph
+Autonomously maps concepts to build visual networks:
+*   **Entities**: Models, Datasets, Methods, Tasks, Frameworks, Metrics, Organizations, and Authors.
+*   **Relationships**: `TRAINS_ON`, `USES`, `IMPROVES`, `COMPARES_WITH`, `OUTPERFORMS`, `IMPLEMENTED_IN`, `EVALUATED_ON`, and `CITES`.
+
+### 📚 Multi-Paper Research Intelligence
+*   Performs side-by-side analysis, benchmarking, and consensus/contradiction detection across papers to locate research gaps.
+
+### 📝 Automated Literature Review Generator
+*   Constructs publication-style literature reviews complete with Introduction, Related Work, Comparative Analysis, Research Trends, Gaps, and Future Directions.
+
+### 🎯 Hybrid Research Recommendation Engine
+Filters research updates based on hybrid profiles:
+*   Combines **Semantic similarity**, **Entity similarity**, **Knowledge graph connections**, and user research history to suggest papers, datasets, models, and topics.
+
+### 🤖 AI Research Copilot
+*   Interactive dashboard companion capable of explaining formulas, suggesting architectures, and supporting literature review formulation.
+
+### 📤 Export Center
+*   Download generated summaries, critiques, scores, and knowledge graphs into professional **PDF**, **DOCX**, and **PPT** presentations.
+
+---
+
+## 🛠️ Technology Stack & Tools
 
 ### Frontend
-*   **Framework:** Next.js 16.2 (App Router, React 19)
-*   **Language:** TypeScript
-*   **Styling:** Vanilla CSS, TailwindCSS v4
-*   **Visualization:** Recharts & custom interactive graphs
-*   **HTTP Client:** Axios
+*   **Frameworks**: Next.js 15.2 (App Router), React 19, TypeScript
+*   **Styling**: Tailwind CSS v4, Vanilla CSS
+*   **Visualizations**: Recharts, D3.js
 
 ### Backend
-*   **Framework:** FastAPI (Python 3.x), Uvicorn
-*   **PDF/Image Extraction:** `pdfplumber`, `PyMuPDF` (`fitz`), `easyocr`, `opencv-python`
-*   **Embeddings & Database:** `sentence-transformers`, `chromadb`
-*   **ML & Data Processing:** `torch`, `torchvision`, `transformers`, `numpy`, `pandas`, `scipy`, `scikit-learn`, `networkx`
-*   **Report Exporters:** `reportlab` (PDF), `python-docx` (DOCX), `python-pptx` (PPTX)
-*   **Voice & Search Integration:** `pyttsx3`, `SpeechRecognition`, `arxiv`
+*   **Framework**: FastAPI, Python 3.9+
+*   **Database ORM**: SQLAlchemy (PostgreSQL / SQLite support)
+
+### AI & Natural Language Processing
+*   **Hugging Face Transformers**
+*   **Sentence Transformers** (e.g. `all-MiniLM-L6-v2` for 384-dimensional embeddings)
+*   **PyTorch** (Neural Network models execution)
+*   **SciSpaCy** & NLP tokenizers
+*   **EasyOCR** & **OpenCV** (Vision-based chart/table extracting)
+
+### Research Intelligence & Databases
+*   **ChromaDB** (Vector memory indexing)
+*   **NetworkX** (Mathematical graph topology algorithms)
+*   **Redis** (Rate-limiting and monitoring cache)
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Directory Layout
 
 ```
 researchmind-ai/
-├── backend/
-│   ├── app/
-│   │   ├── agents/                   # Base agent classes
-│   │   ├── agi_director/             # AGI research governance & execution planner
-│   │   ├── agi_reasoning/            # Logic, fusion, multimodal AGI reasoning
-│   │   ├── ai/                       # Summarizer, Critic, Scoring, and Vision OCR engines
-│   │   ├── alerts/                   # Alert monitors, spike detection, notifications
-│   │   ├── api/routes/               # 34 endpoint routers (upload, chat, nas, world-model, etc.)
-│   │   ├── autonomous_execution/     # Goal solvers, decomposers, execution engines
-│   │   ├── copilot/                  # Interactive co-pilot logic, user profiling
-│   │   ├── deployment_engine/        # Model packaging, versioning, inference API gateway
-│   │   ├── experiment_engine/        # Experiment planning, dataset selectors, evaluation
-│   │   ├── memory/                   # Short, long-term, and vector memory
-│   │   ├── meta_reasoning/           # Metacognition, bias detection, error correction
-│   │   ├── multi_agents/             # Cooperative multi-agent simulation & shared bus
-│   │   ├── nas_engine/               # Neural Architecture Search core, search-spaces, evaluators
-│   │   ├── realtime_research/        # arXiv fetcher, trend trackers, analyzers
-│   │   ├── recommendation_engine/    # Semantic similarity rankers & feed generators
-│   │   ├── self_learning/            # Adaptation loops, feedback trackers
-│   │   ├── training_engine/          # Automated training pipeline generators & checkpointing
-│   │   ├── world_model/              # Temporal simulation, trend forecasting, breakthrough prediction
-│   │   ├── main.py                   # FastAPI main entry point
-│   │   └── requirements.txt          # Python dependencies
-├── frontend/
-│   ├── app/
-│   │   ├── dashboard/page.tsx        # Unified Next.js dashboard workspace
-│   │   ├── page.tsx                  # Landing page
-│   │   └── globals.css               # Main CSS styles
-│   ├── components/
-│   │   ├── charts/                   # Recharts visualizations
-│   │   ├── dashboard/                # Analytics layout components
-│   │   └── knowledge_graph/          # Dynamic entity-relation visualizer
-│   ├── services/
-│   │   └── api.ts                    # Backend API Axios endpoints & interfaces
-│   ├── package.json                  # Next.js workspace configurations
-│   └── tsconfig.json                 # TypeScript configurations
-├── tests/                            # PyTest unit suite (26 separate engine tests)
-└── README.md                         # Main documentation (this file)
+├── backend/                   # FastAPI gateway & AI services core
+│   ├── app/                   # Source code folder
+│   │   ├── agents/            # Base agent classes
+│   │   ├── agi_director/      # AGI planning & orchestration
+│   │   ├── agi_reasoning/     # Logic fusion & multimodal reasoning
+│   │   ├── ai/                # Summarizers, critics, and scoring
+│   │   ├── api/routes/        # 34 endpoint routers (upload, chat, nas, etc.)
+│   │   ├── core/              # Global settings, rate limiters, logging
+│   │   ├── database/          # SQLite models, sessions, and connections
+│   │   ├── memory/            # Semantic RAG collections & episodic loops
+│   │   └── main.py            # Backend gateway entry point
+│   ├── Dockerfile             # Backend container image settings
+│   └── requirements.txt       # Python dependencies
+├── frontend/                  # Next.js Dashboard UI
+│   ├── app/                   # App Router dashboard pages & globals
+│   ├── components/            # Recharts analytics & D3 Knowledge Graphs
+│   ├── services/              # API Axios client connectors
+│   ├── Dockerfile             # Frontend container image settings
+│   └── package.json           # Node configuration
+├── docker/                    # Multi-container orchestration configurations
+│   ├── docker-compose.yml     # Compose config running frontend, backend, and Redis
+│   └── README.md              # Container installation instructions
+├── docs/                      # Technical manuals & architecture references
+│   ├── architecture.md        # Comprehensive system architectural walkthrough
+│   ├── api_endpoints.md       # API routers directory & JSON formats
+│   ├── getting_started.md     # Step-by-step developer setup tutorial
+│   └── autonomous_agents.md   # Interactive agents loops design
+└── README.md                  # Global presentation file (this file)
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🎯 Use Cases
 
-### Prerequisites
-*   Python 3.9+
-*   Node.js 18+ (npm or yarn)
-
-### 1. Setup Backend
-1.  Navigate to the `backend` workspace (or stay at root if using root references):
-    ```bash
-    # Create virtual environment
-    python -m venv venv
-    
-    # Activate virtual environment
-    # On Windows:
-    .\venv\Scripts\activate
-    # On macOS/Linux:
-    source venv/bin/activate
-    ```
-2.  Install required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  Launch the FastAPI server:
-    ```bash
-    uvicorn app.main:app --reload --port 8000
-    ```
-    *   The backend will start running on [http://127.0.0.1:8000](http://127.0.0.1:8000)
-    *   Access the swagger API documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-### 2. Setup Frontend
-1.  Navigate to the `frontend` folder:
-    ```bash
-    cd frontend
-    ```
-2.  Install Node dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the Next.js development server:
-    ```bash
-    npm run dev
-    ```
-    *   The frontend dashboard will run on [http://localhost:3000](http://localhost:3000)
+*   **Students**: Understand academic papers faster, generate pre-formatted literature reviews, and organize project references.
+*   **Researchers**: Parse and cross-reference hundreds of papers, discover research gaps, and identify emerging trend pathways.
+*   **Startups**: Perform high-quality tech analysis, track competitive literature, and discover new patent/innovation directions.
+*   **Academic Institutions**: Assist laboratories, organize reference indices, and provide verification scoring tools.
 
 ---
 
-## 🧪 Running Unit Tests
+## 📊 Core Capabilities Matrix
 
-The backend is guarded by 26 separate Python test suites, verifying endpoints, database caching, search spaces, and autonomous planning engines.
-
-To run the complete test suite:
-1.  Ensure your virtual environment is active.
-2.  Run pytest from the root folder:
-    ```bash
-    pytest
-    ```
-3.  To run specific tests (e.g. recommendation system tests):
-    ```bash
-    pytest tests/test_recommendations.py
-    ```
+| Feature | Status |
+| :--- | :---: |
+| PDF Parsing | ✅ |
+| OCR Analysis | ✅ |
+| AI Summarization | ✅ |
+| Research Critique | ✅ |
+| Research Classification | ✅ |
+| Research Metrics | ✅ |
+| Evidence-Based Scoring | ✅ |
+| RAG Chat | ✅ |
+| Knowledge Graph | ✅ |
+| Multi-Paper Analysis | ✅ |
+| Literature Review Generation | ✅ |
+| Recommendation Engine | ✅ |
+| Research Memory | ✅ |
+| AI Research Copilot | ✅ |
+| Export Center | ✅ |
 
 ---
 
-## 📊 Summary of Implemented Modules (Under Unit Tests)
-The following key modules are implemented and verified via unit tests in the `/tests` folder:
-*   **`test_upload.py` / `test_rag.py`:** Smart document ingest, text parsing, database insertion, and semantic chunk retrieval.
-*   **`test_semantic_search.py` / `test_comparison.py`:** Cross-document search queries and paper comparisons.
-*   **`test_recommendations.py` / `test_live_alerts.py`:** Profile similarity matching, recommender ranking, trend tracking, and alert triggers.
-*   **`test_hypothesis_generation.py` / `test_experiment_engine.py`:** Automated gap detection, training blueprints, and selector matrices.
-*   **`test_nas_engine.py` / `test_training_automation.py`:** Dynamic neural structural search, candidate scoring, training iterations, and checkpoint managers.
-*   **`test_deployment_engine.py`:** Package exporter, gateway configurations, and scaling indicators.
-*   **`test_self_learning.py` / `test_meta_reasoning.py`:** Adaptive memory buffers, reflection loops, self-correction algorithms, and bias filtering.
-*   **`test_world_model.py` / `test_agi_director.py`:** Simulator states, predictive reasoning pathways, and autonomous research cycles.
-"# Algonive_researchmind_ai" 
+## 🔮 Future Scope
+
+*   **Live arXiv Monitoring**: Auto-ingests arXiv submissions matching user interest profiles daily.
+*   **Research Trend Forecasting**: Uses historical metadata curves to project upcoming breakthrough topics.
+*   **Citation Impact Prediction**: Estimates future citation scaling using citation path nodes.
+*   **Autonomous Research Advisor**: Employs AI multi-agents to orchestrate meta-discussions.
+
+---
+
+## 🚀 Running Locally
+
+### 1. Run Backend Gateway
+```bash
+cd backend
+python -m venv venv
+
+# Windows Activation:
+.\venv\Scripts\activate
+# macOS/Linux Activation:
+source venv/bin/activate
+
+pip install -r requirements.txt
+python create_tables.py
+uvicorn app.main:app --reload --port 8000
+```
+*   **Swagger URL**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+### 2. Run Frontend Dashboard
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*   **URL**: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🐳 Running with Docker
+Run the entire platform instantly using Docker:
+```bash
+cd docker
+docker compose up --build
+```
+This sets up Next.js, FastAPI, and Redis. Read the **[Docker Setup Manual](file:///c:/Users/devap/Documents/researchmind-ai/docker/README.md)** for details.
+
+---
+
+## 👨‍💻 Developer
+
+**DEVAPRASATH K**  
+*B.Tech Artificial Intelligence & Data Science*  
+Mahendra Engineering College  
+Namakkal, Tamil Nadu, India  
+
+*   **LinkedIn**: [Devaprasath K](https://www.linkedin.com/in/k-devaprasath-a5079332b)  
+*   **GitHub**: [@devaprasathk28-dot](https://github.com/devaprasathk28-dot)  
+
+---
+
+## ⭐ ResearchMind AI
+*"Transforming Research Papers into Actionable Scientific Intelligence."*
+#   A l g o n i v e _ r e s e a r c h m i n d _ a i  
+ 
