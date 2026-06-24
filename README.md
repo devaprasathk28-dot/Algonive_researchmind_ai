@@ -327,5 +327,4 @@ Namakkal, Tamil Nadu, India
 
 ## ⭐ ResearchMind AI
 *"Transforming Research Papers into Actionable Scientific Intelligence."*
-#   A l g o n i v e _ r e s e a r c h m i n d _ a i  
- 
+#
