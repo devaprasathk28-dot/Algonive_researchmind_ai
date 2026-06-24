@@ -1,4 +1,4 @@
-# 🔬 ResearchMind AI — Autonomous Scientific Discovery & Intellect Engine
+# 🔬  ResearchMind AI — Autonomous Scientific Discovery & Intellect Engine
 
 [![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11-blue.svg)](https://www.python.org/)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-green.svg)](https://nodejs.org/)
